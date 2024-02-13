@@ -1,34 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="container-fluid">
+      <div className="row">
+        <div className="col-sm-8">
+          <div className="sidebar p-3 mt-5 bg-light">
+            <div className="d-flex align-items-start">
+              <div
+                className="nav flex-column nav-pills me-3"
+                id="v-pills-tab"
+                role="tablist"
+                aria-orientation="vertical"
+              >
+                <button
+                  className="btn btn-primary"
+                  id="v-pills-home-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#v-pills-home"
+                  type="button"
+                  role="tab"
+                  aria-controls="v-pills-home"
+                  aria-selected="true"
+                >
+                  New Job ➕
+                </button>
+                <button
+                  className="btn btn-primary mt-3"
+                  id="v-pills-profile-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#v-pills-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="v-pills-profile"
+                  aria-selected="false"
+                >
+                  Job Post #1
+                </button>
+              </div>
+              <div className="tab-content" id="v-pills-tabContent">
+                <div
+                  className="tab-pane fade show active"
+                  id="v-pills-home"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-home-tab"
+                  tabIndex={0}
+                >
+                  <form>
+                    <div className="top-row d-flex">
+                      <div className="left-section flex-start">
+                        <input type="checkbox" name="" id="" className="mx-4" />
+                        <input type="text" name="" id="" placeholder="Job Post Title" className="py-2 px-3" />
+                      </div>
+                      <div className="right-section d-flex flex-row mx-5 px-5">
+                        <h1 className="h3">Active?</h1>
+                        <input type="checkbox"/>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="v-pills-profile"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-profile-tab"
+                  tabIndex={0}
+                >
+                  Job Post
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="main-section">
+            <h1>hiii</h1>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   )
 }
 

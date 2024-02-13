@@ -1,68 +1,141 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+html,
+body:root {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.switch-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    justify-content: center;
+    margin: auto;
+    height: 55px;
   }
-  a:hover {
-    color: #747bff;
+  
+  .switch-button .switch-outer {
+    height: 100%;
+    background: #252532;
+    width: 115px;
+    border-radius: 165px;
+    -webkit-box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
+    box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
+    border: 1px solid #32303e;
+    padding: 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
-  button {
-    background-color: #f9f9f9;
+  
+  .switch-button .switch-outer input[type="checkbox"] {
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
   }
-}
+  
+  .switch-button .switch-outer .button-toggle {
+    height: 42px;
+    width: 42px;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#c6c6c6),
+      to(rgb(168, 168, 255))
+    );
+    background: -o-linear-gradient(#3b3a4e, #272733);
+    background: linear-gradient(#3b3a4e, #272733);
+    border-radius: 100%;
+    -webkit-box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
+    box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: left 0.3s ease-in;
+    -o-transition: left 0.3s ease-in;
+    transition: left 0.3s ease-in;
+    left: 0;
+  }
+  
+  .switch-button
+    .switch-outer
+    input[type="checkbox"]:checked
+    + .button
+    .button-toggle {
+    left: 58%;
+  }
+  
+  .switch-button
+    .switch-outer
+    input[type="checkbox"]:checked
+    + .button
+    .button-indicator {
+    -webkit-animation: indicator 1s forwards;
+    animation: indicator 1s forwards;
+  }
+  
+  .switch-button .switch-outer .button {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+  
+  .switch-button .switch-outer .button-indicator {
+    height: 25px;
+    width: 25px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 3px solid #ef565f;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 10px;
+    position: relative;
+  }
+  
+  @-webkit-keyframes indicator {
+    30% {
+      opacity: 0;
+    }
+  
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+      border: 3px solid #60d480;
+      left: -68%;
+    }
+  }
+  
+  @keyframes indicator {
+    30% {
+      opacity: 0;
+    }
+  
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+      border: 3px solid #60d480;
+      left: -68%;
+    }
+  }
