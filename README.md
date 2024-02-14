@@ -14,4 +14,4 @@ Step 4: Navigate to the browser window from temrinal or go to: http://localhost:
 
 Live preview at:
 
-https://jobapplyhs.vercel.app
+https://handy-solver.vercel.app
