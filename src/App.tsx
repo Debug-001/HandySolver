@@ -1,83 +1,82 @@
+// import { useState } from "react";
+import { FaPlus } from "react-icons/fa6";
+
 const App = () => {
+
+  // const [isChecked, setIsChecked] = useState(false);
+  // const [inputValue, setInputValue] = useState("");
+
+  // const handleCheckboxChange = () => {
+  //   setIsChecked(!isChecked);
+  // };
+
+  // const handleInputChange = (event:any) => {
+  //   setInputValue(event.target.value);
+  // };
+
   return (
-    <main className="container-fluid">
+    <main className="container-fluid pt-5 pb-5 mt-5">
       <div className="row">
-        <div className="col-sm-8">
-          <div className="sidebar p-3 mt-5 bg-light">
-            <div className="d-flex align-items-start">
-              <div
-                className="nav flex-column nav-pills me-3"
-                id="v-pills-tab"
-                role="tablist"
-                aria-orientation="vertical"
-              >
-                <button
-                  className="btn btn-primary"
-                  id="v-pills-home-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#v-pills-home"
-                  type="button"
-                  role="tab"
-                  aria-controls="v-pills-home"
-                  aria-selected="true"
-                >
-                  New Job ➕
-                </button>
-                <button
-                  className="btn btn-primary mt-3"
-                  id="v-pills-profile-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#v-pills-profile"
-                  type="button"
-                  role="tab"
-                  aria-controls="v-pills-profile"
-                  aria-selected="false"
-                >
-                  Job Post #1
-                </button>
-              </div>
-              <div className="tab-content" id="v-pills-tabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="v-pills-home"
-                  role="tabpanel"
-                  aria-labelledby="v-pills-home-tab"
-                  tabIndex={0}
-                >
-                  <form>
-                    <div className="top-row d-flex">
-                      <div className="left-section flex-start">
-                        <input type="checkbox" name="" id="" className="mx-4" />
-                        <input type="text" name="" id="" placeholder="Job Post Title" className="py-2 px-3" />
-                      </div>
-                      <div className="right-section d-flex flex-row mx-5 px-5">
-                        <h1 className="h3">Active?</h1>
-                        <input type="checkbox"/>
-                      </div>
-                    </div>
-                  </form>
+        <div className="col">
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            New Job <FaPlus className="pb-1" />
+          </button>
+          <div
+            className="modal fade"
+            id="exampleModal"
+            tabIndex={-1}
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog modal-dialog-scrollable" style={{ marginLeft: "12rem" }}>
+              <div className="modal-content">
+                <div className="modal-header justify-content-end gap-3">
+                  <button className="btn btn-info text-light ">Duplicate
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >Delete</button>
                 </div>
-                <div
-                  className="tab-pane fade"
-                  id="v-pills-profile"
-                  role="tabpanel"
-                  aria-labelledby="v-pills-profile-tab"
-                  tabIndex={0}
-                >
-                  Job Post
+                <div className="modal-body">
+                  <div className="head-row d-flex gap-4">
+                    <input type="checkbox" name="" id="" />
+                    <input className="p-2 w-50" type="text" name="" placeholder="Job Post Title" id=""/>
+                  </div>
+                  <div className="second-row d-flex flex gap-4 mt-5">
+                    <input type="checkbox" name="" id=""/>
+                    <h4>Introduction</h4>
+                  </div>
+                  <input className="p-2 w-100 mt-2" style={{ marginLeft: "2.4rem", height: "15vh" }} type="text" name="" placeholder="Ideal Candidate is someone...." id=""/>
+
+                  <div className="second-row d-flex flex gap-4 mt-5 pt-3">
+                    <input type="checkbox" name="" id=""/>
+                    <h4>Roles and Responsibilities</h4>
+                  </div>
+                  <input className="p-2 w-100 mt-2" style={{ marginLeft: "2.4rem", height: "15vh" }} type="text" name="" placeholder="Ideal Candidate is someone...." id=""/>
+                  <div className="exp-col d-flex gap-4 mt-5">
+                  <input type="checkbox" name="" id="" />
+                  <h4>Experience</h4>
+                  <input className="mx-5" type="range" name="" id="" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="col">
-          <div className="main-section">
-            <h1>hiii</h1>
-          </div>
+          <p></p>
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;
